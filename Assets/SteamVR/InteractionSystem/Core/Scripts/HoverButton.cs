@@ -49,8 +49,6 @@ namespace Valve.VR.InteractionSystem
             startPosition = movingPart.localPosition;
             endPosition = startPosition + localMoveDistance;
             handEnteredPosition = endPosition;
-            Debug.Log(gameObject.name + " start "+ startPosition + " end " + endPosition);
-     
         }
 
         private void HandHoverUpdate(Hand hand)
