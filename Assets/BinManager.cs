@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class BinManager : MonoBehaviour
 {
@@ -15,10 +16,12 @@ public class BinManager : MonoBehaviour
     }
 
     public void OnTriggerEnter(Collider other){
-        Debug.Log(other.gameObject.name + " entered compost");
-        
-        if(other.gameObject.CompareTag("Compost")){
-            Debug.Log("KOMPOOOST");
+        if(other.gameObject.CompareTag(gameObject.tag)){
+            Debug.Log("je vo mne " + other.gameObject.name);
+        }
+        else
+        {
+
         }
     }
 }

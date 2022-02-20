@@ -12,7 +12,6 @@ public class SignTextManager : MonoBehaviour
     //another way of doing this would be to find children of the canvas
     //we need to set size of array in the inspector
     [SerializeField] TMP_Text[] texts;
-    [SerializeField] bool isNextButton;
     private int index = 0;  //Static? 
 
     public void Start(){
@@ -20,9 +19,9 @@ public class SignTextManager : MonoBehaviour
         HandleButtonVisibility();
     }
 
-    public void OnButtonDown()
+    public void OnButtonDown(int direction)
     {
-        ChangeText(isNextButton ? 1 : -1);
+        ChangeText(direction);
     }
 
     //toto by som este mala prilinkovat v button -> v on trigger funkciach

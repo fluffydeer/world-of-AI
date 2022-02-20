@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Compost
+  - Paper
+  - Glass
+  - Plastic
+  - Metal
   layers:
   - Default
   - TransparentFX
