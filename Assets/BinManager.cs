@@ -17,11 +17,12 @@ public class BinManager : MonoBehaviour
 
     public void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag(gameObject.tag)){
-            Debug.Log("je vo mne " + other.gameObject.name);
+            Debug.Log("kos: " + gameObject.tag) ;
+            Debug.Log("smetie: " + gameObject.tag);
         }
         else
         {
-
+            Debug.Log("zle");
         }
     }
 }
