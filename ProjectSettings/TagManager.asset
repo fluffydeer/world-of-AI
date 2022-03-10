@@ -10,6 +10,7 @@ TagManager:
   - Plastic
   - Metal
   - TabletData
+  - OkButton
   layers:
   - Default
   - TransparentFX
