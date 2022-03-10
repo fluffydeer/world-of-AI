@@ -9,6 +9,7 @@ TagManager:
   - Glass
   - Plastic
   - Metal
+  - TabletData
   layers:
   - Default
   - TransparentFX
