@@ -77,7 +77,7 @@ public class BinManager : MonoBehaviour
     private void IsDone(){
         if(correctAnswers == garbageAmount){
             scoreText.text = "done";
-
+            //co potom???
         }
     }
 }
