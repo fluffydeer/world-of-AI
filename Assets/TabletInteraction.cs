@@ -13,11 +13,12 @@ public class TabletInteraction : MonoBehaviour{
     private void OnTriggerEnter(Collider other){
         //tu by bolo fajn kontrolovatze ci zaciatok sova je finger a az potom t oznacit
         //Debug.Log(this.name + " was entered");
-        Debug.Log(other.name);
-        if (gameObject.CompareTag("OkButton")){
+        //ze ci na lavu ruku netreba pridat finger_middle_2_l?s
+        if (gameObject.CompareTag("OkButton") && other.name.Equals("finger_middle_2_r")){
             PressButton();
         }
-        else if (gameObject.CompareTag("TabletData")){
+        else if (gameObject.CompareTag("TabletData") && other.name.Equals("finger_middle_2_r"))
+        {
             HighlightRow();
         }
     }

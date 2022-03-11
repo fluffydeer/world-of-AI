@@ -4,11 +4,23 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 using TMPro;
 
+
+//objekty sa daju vyberat a donekonecna vkladat
+//-buz nich dat dole throwable skript
+//-alebo ich vymazat a nahradit ich prefabom z rovnakym transformom bez skriptov
+//predmety po priradeni do zleho kosa miznu
+//slider sa na tabuli vobec nezvacuje - ani tam nie
+//v hre sa da zaradit viac ako 8 objektov do kosov co je blbost
+//bolo by fajn tam mat 10 predmetov na zaradenie
+//otestovat to aby sa objekty zaratali len ak su vo vnutri kosa a nie ak sa dotknu vonka
+//repnut zaciatocnu tabulu na skore potom co 1. objekt je v kosi
+//na konci znicit tuto tabulu po par sekundach a ukazat cestu dalej
+
 public class BinManager : MonoBehaviour
 {
     [SerializeField] GameObject scorebar;
     [SerializeField] GameObject slider;
-    [SerializeField] int garbageAmount;
+    [SerializeField] int garbageAmount = 8;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] AudioClip correctAnswerSound;
     [SerializeField] AudioClip incorrectAnswerSound;
@@ -48,7 +60,6 @@ public class BinManager : MonoBehaviour
         SetSliderWidth();
         SetSliderPosition();
         binAudio.PlayOneShot(correctAnswerSound, 1.0f);
-        scoreText.text = "heh";
         scoreText.text = $"\n \nRoztriedené\n \n \n {correctAnswers}/8";
 
         //demobilizovat danu vec aby zotrvala v tom bine -
@@ -57,6 +68,7 @@ public class BinManager : MonoBehaviour
         IsDone();
     }
 
+    //toto este prestudovat!!!
     private void SetSliderWidth(){
         float x = correctAnswers * initialSliderWidth;
         Vector3 scale = slider.transform.localScale;
