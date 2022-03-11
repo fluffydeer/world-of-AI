@@ -12,7 +12,7 @@ public class BinManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] AudioClip correctAnswerSound;
     [SerializeField] AudioClip incorrectAnswerSound;
-    private AudioSource playerAudio;
+    private AudioSource binAudio;
     private float scorebarWidth;
     private float initialSliderWidth;
     private int correctAnswers = 0;
@@ -21,12 +21,7 @@ public class BinManager : MonoBehaviour
     {
         scorebarWidth = scorebar.transform.localScale.x; //0.7
         initialSliderWidth = slider.transform.localScale.x;    //0.0875
-        playerAudio = GetComponent<AudioSource>();
-    }
- 
-    void Update()
-    {
-        
+        binAudio = GetComponent<AudioSource>();
     }
 
     public void OnTriggerEnter(Collider other) {
@@ -42,7 +37,7 @@ public class BinManager : MonoBehaviour
             Debug.Log("zle");
             Transform transform = other.gameObject.transform;
             transform.position = new Vector3(0,0,+5f);
-            playerAudio.PlayOneShot(incorrectAnswerSound, 1.0f);
+            binAudio.PlayOneShot(incorrectAnswerSound, 1.0f);
         }
     }
 
@@ -52,7 +47,7 @@ public class BinManager : MonoBehaviour
         correctAnswers++;
         SetSliderWidth();
         SetSliderPosition();
-        playerAudio.PlayOneShot(correctAnswerSound, 1.0f);
+        binAudio.PlayOneShot(correctAnswerSound, 1.0f);
         scoreText.text = "heh";
         scoreText.text = $"\n \nRoztriedené\n \n \n {correctAnswers}/8";
 

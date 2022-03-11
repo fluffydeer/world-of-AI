@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 //script for handling user interaction with tablet 
 //specifically with the Text (TMP) the player will touch on
 public class TabletInteraction : MonoBehaviour{
-    [SerializeField] GameObject background;
+    [SerializeField] GameObject highlight;
     //[SerializeField] bool isSelected;
     [SerializeField] bool isCorrect;
 
     private void OnTriggerEnter(Collider other){
         //tu by bolo fajn kontrolovatze ci zaciatok sova je finger a az potom t oznacit
         //Debug.Log(this.name + " was entered");
-        //Debug.Log(other.name);
+        Debug.Log(other.name);
         if (gameObject.CompareTag("OkButton")){
             PressButton();
         }
@@ -22,7 +23,7 @@ public class TabletInteraction : MonoBehaviour{
     }
 
     private void HighlightRow(){
-        Debug.Log("TABLETDATA");
+        //Debug.Log("TABLETDATA");
         //this resets all the highlights and highlights the one user just touched
         Transform parent = this.transform.parent;
         foreach (Transform child1 in parent){
@@ -39,17 +40,22 @@ public class TabletInteraction : MonoBehaviour{
     }
 
     private void PressButton(){
-        Debug.Log("OKBUTTON");
+        //Debug.Log("OKBUTTON");
         GameObject pressedButton = gameObject.transform.Find("PressedButton").gameObject;
         GameObject unpressedButton = gameObject.transform.Find("UnpressedButton").gameObject;
 
         pressedButton.SetActive(true);
         unpressedButton.SetActive(false);
-        StartCoroutine(Tablet.Instance.SetActive(unpressedButton, 0.01f));  
+        StartCoroutine(Tablet.Instance.SetActive(unpressedButton, 0.5f));  
         Tablet.Instance.CheckAnswers();
     }
 
     public bool GetIsCorrect(){
         return isCorrect;
+    }
+
+    public void SetHighlightColor(Color color)
+    {
+        highlight.gameObject.GetComponent<Renderer>().material.color = color;
     }
 }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class DecisionTreesLevelManager : MonoBehaviour
 {
-    public static DecisionTreesLevelManager Instance; 
+    public static DecisionTreesLevelManager Instance;
+    public AudioClip successSound;
+    public AudioClip failureSound;
 
     public void Awake()
     {
@@ -14,19 +16,8 @@ public class DecisionTreesLevelManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);  //doesnt destroy GO when scene changes
-        //todo: but ,aybe i want the scene to change? 
-
-    }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
+        //DontDestroyOnLoad(gameObject);  //doesnt destroy GO when scene changes
+        //todo: but maybe i want the scene to change? 
     }
 
     public void Hide(GameObject hideMe)
@@ -38,4 +29,5 @@ public class DecisionTreesLevelManager : MonoBehaviour
     {
         showMe.SetActive(true);
     }
+
 }
