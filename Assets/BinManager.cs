@@ -31,13 +31,16 @@ public class BinManager : MonoBehaviour
     private float initialSliderWidth;
     private int correctAnswers = 0;
 
-    void Start()
+    public void Start()
     {
         scorebarWidth = scorebar.transform.localScale.x; //0.7
+        Debug.Log("scorebarwidth " + scorebarWidth);
         initialSliderWidth = slider.transform.localScale.x;    //0.0875
+        Debug.Log("initial slider width " + initialSliderWidth);
         binAudio = GetComponent<AudioSource>();
     }
 
+    
     public void OnTriggerEnter(Collider other) {
         Debug.Log("other name: " + other.gameObject.name);
         Debug.Log("other tag: " + other.gameObject.tag);
@@ -46,11 +49,24 @@ public class BinManager : MonoBehaviour
             Debug.Log("dobre");
             //freeze position
             //len ci toto zastavi aby interactable fungovalo nadalej
-            Rigidbody rb = other.GetComponent<Rigidbody>(); 
-            rb.constraints = RigidbodyConstraints.FreezePosition;
-            other.GetComponent<Interactable>().enabled = false;
-            other.GetComponent<Throwable>().enabled = false;
-            CorrectAnswer();
+            //Rigidbody rb = other.GetComponent<Rigidbody>(); 
+            //rb.constraints = RigidbodyConstraints.FreezePosition;
+            //rb.constraints = RigidbodyConstraints.FreezeRotation;
+            //other.GetComponent<Interactable>().enabled = false;
+            //vyzera to ze throwable script treba znicit uplne,
+            //ze sa neda vypnut
+            //other.GetComponent<Throwable>().enabled = false;
+            //Destroy(other.GetComponent<Interactable>());
+            other.transform.parent = null;
+            StartCoroutine(RemoveThrowable(other.gameObject));
+            //po sekund mozem vymzata
+            //Destroy(other.GetComponent<Throwable>());   //aby s tym nemohol hybat
+            Garbage garbageScript = other.GetComponent<Garbage>();
+            if (!garbageScript.GetIsInBin())
+            {
+                garbageScript.SetIsInBin(true);
+                CorrectAnswer();
+            }
         }
         else
         {
@@ -58,20 +74,29 @@ public class BinManager : MonoBehaviour
             binAudio.PlayOneShot(incorrectAnswerSound, 1.0f);
             //find child called spawnpoint
             //assign this spawnpoint to "new position"
-            Transform spawnPoint = other.transform.Find("SpawnPoint");
-            Debug.Log(spawnPoint);
-            transform.position = spawnPoint.position;
-//            transform.position = new Vector3(0,0,+5f);
+            //Transform spawnPoint = other.transform.Find("SpawnPoint");
+            //Debug.Log(spawnPoint);
+            //checknut local position
+            //Debug.Log("spawn point" + spawnPoint.position);
+            //other.transform.position = spawnPoint.position;
+            Garbage garbageScript = other.GetComponent<Garbage>();
+
+            other.transform.position = garbageScript.GetInitialPosition();
+            Debug.Log("garbage" + other.transform.position);
 
         }
     }
 
+    public IEnumerator RemoveThrowable(GameObject other)
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(other.GetComponent<Throwable>());   //aby s tym nemohol hybat
+    }
 
     //implementovat aj OnTriggerExit? 
     private void CorrectAnswer(){
         correctAnswers++;
         SetSliderWidth();
-        SetSliderPosition();
         binAudio.PlayOneShot(correctAnswerSound, 1.0f);
         scoreText.text = $"\n \nRoztriedené\n \n \n {correctAnswers}/8";
 
@@ -86,18 +111,21 @@ public class BinManager : MonoBehaviour
         float x = correctAnswers * initialSliderWidth;
         Vector3 scale = slider.transform.localScale;
         slider.transform.localScale = new Vector3(x, scale.y, scale.z);
-        Debug.Log(slider.transform.localScale);
+        Debug.Log("slider localScale" + slider.transform.localScale);
+        SetSliderPosition();
+
     }
 
     private void SetSliderPosition(){
         float x = scorebarWidth/2 -  (initialSliderWidth * correctAnswers)/2;
-        Vector3 position = slider.transform.position;
-        slider.transform.position = new Vector3(x, position.y, position.z);
-        Debug.Log(slider.transform.position);
+        Vector3 position = slider.transform.localPosition;
+        Debug.Log("previous slider position" + slider.transform.localPosition);
+        slider.transform.localPosition = new Vector3(x, position.y, position.z);
+        Debug.Log("slider position" + slider.transform.localPosition);
     }
 
     private void IsDone(){
-        if(correctAnswers == garbageAmount){
+        if(correctAnswers >= garbageAmount){
             scoreText.text = "done";
             //co potom???
         }
