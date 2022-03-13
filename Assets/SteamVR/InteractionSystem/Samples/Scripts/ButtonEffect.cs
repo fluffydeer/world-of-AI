@@ -9,15 +9,21 @@ namespace Valve.VR.InteractionSystem.Sample
 {
     public class ButtonEffect : MonoBehaviour
     {
+        [SerializeField] GameObject toShow;
+        [SerializeField] GameObject[] toHide;
         public void OnButtonDown(Hand fromHand)
         {
-            ColorSelf(Color.cyan);
+            //ColorSelf(Color.cyan);
             fromHand.TriggerHapticPulse(1000);
+            toShow.SetActive(true);
+            foreach(GameObject item in toHide){
+                item.SetActive(false);
+            }
         }
 
         public void OnButtonUp(Hand fromHand)
         {
-            ColorSelf(Color.white);
+            //ColorSelf(Color.white);
         }
 
         private void ColorSelf(Color newColor)
