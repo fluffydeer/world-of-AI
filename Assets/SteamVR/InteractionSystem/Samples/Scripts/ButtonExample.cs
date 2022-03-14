@@ -16,7 +16,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
         private void OnButtonDown(Hand hand)
         {
-            StartCoroutine(DoPlant());
+            //StartCoroutine(DoPlant());
         }
 
         private IEnumerator DoPlant()

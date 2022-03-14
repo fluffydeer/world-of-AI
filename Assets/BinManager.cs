@@ -4,20 +4,6 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 using TMPro;
 
-
-//objekty sa daju vyberat a donekonecna vkladat
-//-buz nich dat dole throwable skript
-//-alebo ich vymazat a nahradit ich prefabom z rovnakym transformom bez skriptov
-//predmety po priradeni do zleho kosa miznu
-//slider sa na tabuli vobec nezvacuje - ani tam nie
-//v hre sa da zaradit viac ako 8 objektov do kosov co je blbost
-//bolo by fajn tam mat 10 predmetov na zaradenie
-//otestovat to aby sa objekty zaratali len ak su vo vnutri kosa a nie ak sa dotknu vonka
-//-toto kvoli tomu, ze je to vr sa ani neda moc tomu zabranit, jedine pomocou kodu
-
-//repnut zaciatocnu tabulu na skore potom co 1. objekt je v kosi
-//na konci znicit tuto tabulu po par sekundach a ukazat cestu dalej
-
 public class BinManager : MonoBehaviour
 {
     [SerializeField] GameObject scorebar;
@@ -26,41 +12,35 @@ public class BinManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] AudioClip correctAnswerSound;
     [SerializeField] AudioClip incorrectAnswerSound;
+    [SerializeField] GameObject branch3;
+    [SerializeField] GameObject sign;
+    [SerializeField] GameObject sign2;
+    [SerializeField] GameObject signText;
+    [SerializeField] GameObject scorebar2;
+    [SerializeField] GameObject slider2;
+
     private AudioSource binAudio;
     private float scorebarWidth;
     private float initialSliderWidth;
-    private int correctAnswers = 0;
+    private static int correctAnswers = 0;
 
     public void Start()
     {
         scorebarWidth = scorebar.transform.localScale.x; //0.7
-        Debug.Log("scorebarwidth " + scorebarWidth);
+        //Debug.Log("scorebarwidth " + scorebarWidth);
         initialSliderWidth = slider.transform.localScale.x;    //0.0875
-        Debug.Log("initial slider width " + initialSliderWidth);
+        //Debug.Log("initial slider width " + initialSliderWidth);
         binAudio = GetComponent<AudioSource>();
     }
 
     
     public void OnTriggerEnter(Collider other) {
-        Debug.Log("other name: " + other.gameObject.name);
-        Debug.Log("other tag: " + other.gameObject.tag);
-        Debug.Log("bin: " + gameObject.tag);
+        //Debug.Log("other name: " + other.gameObject.name);
+        //Debug.Log("other tag: " + other.gameObject.tag);
+        //Debug.Log("bin: " + gameObject.tag);
         if (other.gameObject.CompareTag(gameObject.tag)){
-            Debug.Log("dobre");
-            //freeze position
-            //len ci toto zastavi aby interactable fungovalo nadalej
-            //Rigidbody rb = other.GetComponent<Rigidbody>(); 
-            //rb.constraints = RigidbodyConstraints.FreezePosition;
-            //rb.constraints = RigidbodyConstraints.FreezeRotation;
-            //other.GetComponent<Interactable>().enabled = false;
-            //vyzera to ze throwable script treba znicit uplne,
-            //ze sa neda vypnut
-            //other.GetComponent<Throwable>().enabled = false;
-            //Destroy(other.GetComponent<Interactable>());
             other.transform.parent = null;
             StartCoroutine(RemoveThrowable(other.gameObject));
-            //po sekund mozem vymzata
-            //Destroy(other.GetComponent<Throwable>());   //aby s tym nemohol hybat
             Garbage garbageScript = other.GetComponent<Garbage>();
             if (!garbageScript.GetIsInBin())
             {
@@ -70,7 +50,7 @@ public class BinManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("zle");
+            //Debug.Log("zle");
             binAudio.PlayOneShot(incorrectAnswerSound, 1.0f);
             //find child called spawnpoint
             //assign this spawnpoint to "new position"
@@ -82,52 +62,60 @@ public class BinManager : MonoBehaviour
             Garbage garbageScript = other.GetComponent<Garbage>();
 
             other.transform.position = garbageScript.GetInitialPosition();
-            Debug.Log("garbage" + other.transform.position);
-
+            //Debug.Log("garbage" + other.transform.position);
         }
     }
 
-    public IEnumerator RemoveThrowable(GameObject other)
-    {
-        yield return new WaitForSeconds(1f);
-        Destroy(other.GetComponent<Throwable>());   //aby s tym nemohol hybat
-    }
-
-    //implementovat aj OnTriggerExit? 
     private void CorrectAnswer(){
         correctAnswers++;
         SetSliderWidth();
         binAudio.PlayOneShot(correctAnswerSound, 1.0f);
         scoreText.text = $"\n \nRoztriedené\n \n \n {correctAnswers}/8";
 
-        //demobilizovat danu vec aby zotrvala v tom bine -
-        //freeze x,y,z? 
-        //potom by netrebalo riesit OnTriggerExit
+        if(correctAnswers == 1)
+        {
+            signText.SetActive(true);
+            scorebar2.SetActive(true);
+            slider2.SetActive(true);
+        }
         IsDone();
     }
 
-    //toto este prestudovat!!!
     private void SetSliderWidth(){
         float x = correctAnswers * initialSliderWidth;
+        //Debug.Log("correct answers " + x);
         Vector3 scale = slider.transform.localScale;
         slider.transform.localScale = new Vector3(x, scale.y, scale.z);
-        Debug.Log("slider localScale" + slider.transform.localScale);
+        //Debug.Log("slider localScale" + slider.transform.localScale.ToString("F4"));
         SetSliderPosition();
-
     }
 
     private void SetSliderPosition(){
         float x = scorebarWidth/2 -  (initialSliderWidth * correctAnswers)/2;
         Vector3 position = slider.transform.localPosition;
-        Debug.Log("previous slider position" + slider.transform.localPosition);
+        //Debug.Log("previous slider position" + slider.transform.localPosition.ToString("F4"));
         slider.transform.localPosition = new Vector3(x, position.y, position.z);
-        Debug.Log("slider position" + slider.transform.localPosition);
+        //Debug.Log("slider position" + slider.transform.localPosition.ToString("F4"));
     }
 
     private void IsDone(){
         if(correctAnswers >= garbageAmount){
-            scoreText.text = "done";
-            //co potom???
+            scoreText.text = $"\n \nHotovo. Poďme ďalej!\n \n \n {correctAnswers}/8";
+            StartCoroutine(NextLevel(4f));
         }
+    }
+
+    public IEnumerator NextLevel(float time)
+    {
+        yield return new WaitForSeconds(time);
+        branch3.SetActive(true);
+        sign.SetActive(false);
+        sign2.SetActive(false);
+    }
+
+    public IEnumerator RemoveThrowable(GameObject other)
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(other.GetComponent<Throwable>());   //aby s tym nemohol hybat
     }
 }
