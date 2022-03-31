@@ -28,10 +28,10 @@ public class SignTextManager : MonoBehaviour
     //schovat potom button ak uzje index posledny
     public void ChangeText(int increment)
     {
-        Debug.Log("current: " + index);
+        //Debug.Log("current: " + index);
         texts[index].gameObject.SetActive(false);
         index = index + increment;
-        Debug.Log("new: " + index);
+        //Debug.Log("new: " + index);
         texts[index].gameObject.SetActive(true);
         HandleButtonVisibility();
     }
