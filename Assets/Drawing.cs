@@ -40,7 +40,6 @@ public class Drawing : MonoBehaviour
         foreach(GameObject quad in highlightedQuads)
         {
             quad.GetComponent<MeshRenderer>().material.color = new Color(0,0,0);
-            //quad.GetComponent<Renderer>().material.color = Color.black;
             quad.GetComponent<BoxCollider>().enabled = true;
         }
         highlightedQuads.Clear();
