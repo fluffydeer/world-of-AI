@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
 public class NeuralNetworkManager : MonoBehaviour
 {
     public static NeuralNetworkManager Instance;
+    [SerializeField] private Fading fadingScript = null;
     [SerializeField] private AudioClip correctAnswerSound = null;
     [SerializeField] private AudioClip incorrectAnswerSound = null;
     [SerializeField] private List<GameObject> teleports = null;
@@ -20,6 +22,7 @@ public class NeuralNetworkManager : MonoBehaviour
         }
         Instance = this;
         audioSource = GetComponent<AudioSource>();
+        fadingScript = GetComponent<Fading>();
     }
 
     public void PlayCorrectAnswerSound()
@@ -56,4 +59,14 @@ public class NeuralNetworkManager : MonoBehaviour
         }
     }
 
+    public void FadeInGameObject(GameObject something){
+        StartCoroutine(fadingScript.FadeIn(something));
+    }
+
+    
+
+    public IEnumerator ShowWithDelay(GameObject something){
+        yield return new WaitForSeconds(2.0f);
+        something.SetActive(true);
+    }
 }

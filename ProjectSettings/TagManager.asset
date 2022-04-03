@@ -11,6 +11,7 @@ TagManager:
   - Metal
   - TabletData
   - OkButton
+  - CD
   layers:
   - Default
   - TransparentFX

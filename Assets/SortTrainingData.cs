@@ -8,7 +8,9 @@ public class SortTrainingData : MonoBehaviour
 {
     [SerializeField] private Image image = null;
     [SerializeField] private GameObject finalText = null;
+    [SerializeField] private GameObject CD = null;
     [SerializeField] private List<Sprite> sprites = null;       //images are sorted in asc order 
+    
     private List<int> availableIndices = new List<int>();
     private int randomIndex;
     private bool trainingIsDone = false;
@@ -66,10 +68,7 @@ public class SortTrainingData : MonoBehaviour
         trainingIsDone = true;
         Destroy(image);     //removing graphical component so we can add text 
         NeuralNetworkManager.Instance.SetUpDrawing();
+        NeuralNetworkManager.Instance.FadeInGameObject(CD);
         finalText.SetActive(true);
-
-        //show ui message that its done and he can continue journey
-        //remove triggers from keyboards? so user cant fire shownextsprite all the time
-        //or a variable checking is traning is really over
     }
 }
