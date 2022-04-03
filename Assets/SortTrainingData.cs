@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Valve.VR.InteractionSystem;
+
 
 public class SortTrainingData : MonoBehaviour
 {
     [SerializeField] private Image image = null;
     [SerializeField] private GameObject finalText = null;
     [SerializeField] private GameObject CD = null;
+    [SerializeField] private TeleportArea teleportArea = null; 
     [SerializeField] private List<Sprite> sprites = null;       //images are sorted in asc order 
-    
+
+
     private List<int> availableIndices = new List<int>();
     private int randomIndex;
     private bool trainingIsDone = false;
@@ -68,7 +72,9 @@ public class SortTrainingData : MonoBehaviour
         trainingIsDone = true;
         Destroy(image);     //removing graphical component so we can add text 
         NeuralNetworkManager.Instance.SetUpDrawing();
+        CD.transform.parent.gameObject.SetActive(true);
         NeuralNetworkManager.Instance.FadeInGameObject(CD);
         finalText.SetActive(true);
+        teleportArea.locked = false;
     }
 }

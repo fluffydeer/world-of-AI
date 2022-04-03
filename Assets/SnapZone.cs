@@ -8,13 +8,11 @@ public class SnapZone : MonoBehaviour
 {
     [SerializeField] private Animator anim = null;
     [SerializeField] private GameObject outputText = null;
+    [SerializeField] private GameObject teleportArea = null;
     private string closeCDDrive = "Close_CD_Drive";
 
-
-    //[SerializeField] private GameObject CD_static = null;
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("CD")){
-            gameObject.SetActive(false);
             Destroy(other.gameObject.GetComponent<Throwable>());
             Destroy(other.gameObject.GetComponent<Interactable>());
             Destroy(other.gameObject.GetComponent<Rigidbody>());
@@ -27,6 +25,9 @@ public class SnapZone : MonoBehaviour
             //CD_static.SetActive(true);
             anim.Play(closeCDDrive, 0, 0.0f);
             StartCoroutine(NeuralNetworkManager.Instance.ShowWithDelay(outputText));
+            Debug.Log("setting to active");
+            teleportArea.GetComponent<TeleportArea>().locked = false;
+            gameObject.SetActive(false);
         }
     }
 }
