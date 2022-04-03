@@ -26,7 +26,6 @@ public class SnapZone : MonoBehaviour
             //lebo ja budem ukazovat toto
             //CD_static.SetActive(true);
             anim.Play(closeCDDrive, 0, 0.0f);
-            outputText.SetActive(true);
             StartCoroutine(NeuralNetworkManager.Instance.ShowWithDelay(outputText));
         }
     }
