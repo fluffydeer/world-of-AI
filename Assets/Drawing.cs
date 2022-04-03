@@ -8,8 +8,8 @@ using BarracudaSample;
 public class Drawing : MonoBehaviour
 {
     public static Drawing Instance;
-    [SerializeField] RenderTexture texture;
-    [SerializeField] MnistSample mnistSample;
+    [SerializeField] RenderTexture texture = null;
+    [SerializeField] MnistSample mnistSample = null;
     private List<GameObject> highlightedQuads = new List<GameObject>();
 
     public void Awake()
@@ -36,7 +36,6 @@ public class Drawing : MonoBehaviour
 
     public void ClearTexture()
     {
-        Debug.Log("clearing");
         foreach(GameObject quad in highlightedQuads)
         {
             quad.GetComponent<MeshRenderer>().material.color = new Color(0,0,0);
