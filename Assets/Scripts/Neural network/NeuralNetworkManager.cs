@@ -60,6 +60,7 @@ public class NeuralNetworkManager : MonoBehaviour
     }
 
     public void FadeInGameObject(GameObject something){
+        Debug.Log("fadinggg");
         StartCoroutine(fadingScript.FadeIn(something));
     }
 

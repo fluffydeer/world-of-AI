@@ -35,7 +35,7 @@ public class Fading : MonoBehaviour
     public IEnumerator FadeIn(GameObject something){
         renderer = something.GetComponent<MeshRenderer>();
 
-        for(float f = 0f; f <= 1.1f; f += 0.05f){
+        for(float f = 0f; f <= 1.1f; f += 0.025f){
             Color c = renderer.material.color;
             c.a = f;
             renderer.material.color = c;
