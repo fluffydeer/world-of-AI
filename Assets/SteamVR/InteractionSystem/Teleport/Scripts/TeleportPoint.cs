@@ -233,6 +233,7 @@ namespace Valve.VR.InteractionSystem
 					#endif
 					Application.Quit();
                 }
+				Destroy(player);
 				SceneManager.LoadScene(switchToScene);
 				//Debug.Log("<b>[SteamVR Interaction]</b> TeleportPoint: Hook up your level loading logic to switch to new scene: " + switchToScene, this);
 			}
