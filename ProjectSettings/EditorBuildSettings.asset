@@ -4,7 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Demo Blend 1.unity
+    guid: 4ad1d4b8e73694e4bb7bad31d4cf7dc0
+  - enabled: 1
+    path: Assets/Scenes/DecisionTrees.unity
+    guid: e1b793c40df980747b159fd6e9176269
+  - enabled: 1
+    path: Assets/Scenes/NeuralNetwork.unity
+    guid: b2fa8882363c4644b93046de18bcbf19
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 1a9832987bb442841a026e820aa9cc25, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ff3ec92d849adab4987a2ff873618704, type: 2}
