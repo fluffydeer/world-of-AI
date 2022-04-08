@@ -9,6 +9,8 @@ public class NeuralNetworkManager : MonoBehaviour
     [SerializeField] private Fading fadingScript = null;
     [SerializeField] private AudioClip correctAnswerSound = null;
     [SerializeField] private AudioClip incorrectAnswerSound = null;
+    [SerializeField] private AudioClip cdPlayerClosing = null;
+
     [SerializeField] private List<GameObject> teleports = null;
     [SerializeField] private GameObject setOfCrates = null;
     private AudioSource audioSource;
@@ -33,6 +35,11 @@ public class NeuralNetworkManager : MonoBehaviour
     public void PlayIncorrectAnswerSound()
     {
         audioSource.PlayOneShot(incorrectAnswerSound);
+    }
+
+    public void PlayCDPlayerClosingSound()
+    {
+        audioSource.PlayOneShot(cdPlayerClosing);
     }
 
     public void SetUpDrawing()
@@ -67,7 +74,7 @@ public class NeuralNetworkManager : MonoBehaviour
     
 
     public IEnumerator ShowWithDelay(GameObject something){
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(4.0f);
         something.SetActive(true);
     }
 }

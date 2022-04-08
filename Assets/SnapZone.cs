@@ -11,6 +11,7 @@ public class SnapZone : MonoBehaviour
     [SerializeField] private GameObject teleportArea = null;
     [SerializeField] private GameObject CD_in_driver = null;
     [SerializeField] private Renderer renderer = null;
+    [SerializeField] private ParticleSystem electricityParticleSystem;
 
     private string closeCDDrive = "Close_CD_Drive";
 
@@ -31,7 +32,7 @@ public class SnapZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("CD")){
-            boze();
+            boze();     //toto by sa malo spustat z ineho skriptu
         }
     }
     public IEnumerator ShowWithDelay(GameObject something)
@@ -41,8 +42,8 @@ public class SnapZone : MonoBehaviour
     }
 
     private void boze(){
-            //show the CD in Driver
             CD_in_driver.SetActive(true);
+            NeuralNetworkManager.Instance.PlayCDPlayerClosingSound();
 
             //asi toto zabija tu korutinu
             //gameObject.SetActive(false);  
@@ -61,29 +62,9 @@ public class SnapZone : MonoBehaviour
             Debug.Log("animating");
             anim.Play(closeCDDrive, 0, 0.0f);
 
-            //fade the output text    
-            //outputText.SetActive(true);
             StartCoroutine(NeuralNetworkManager.Instance.ShowWithDelay(outputText));
-            //StartCoroutine(ShowWithDelay(outputText));
+            electricityParticleSystem.Play();
 
             teleportArea.GetComponent<TeleportArea>().locked = false;
-            
-            //toto mozem zmazat
-            //toto nefungovalo
-            //other.gameObject.transform.SetParent(transform);  
-            //ak by fungovalo toto, tak by asi vsetky tieto dalsie vlastnosti museli byt 0s
-
-            /*
-            Destroy(other.gameObject.GetComponent<Throwable>());
-            Destroy(other.gameObject.GetComponent<Interactable>());
-            Destroy(other.gameObject.GetComponent<Rigidbody>());
-            
-            Debug.Log("after: other.gameObject.transform.parent " + other.gameObject.transform.parent.name);
-            Debug.Log("ater: transform.parent " + transform.parent.name);
-            other.gameObject.transform.position = transform.position;
-            other.gameObject.transform.rotation = transform.rotation;
-            other.gameObject.transform.localScale = transform.localScale;
-            //lebo ja budem ukazovat toto*/
-            //CD_static.SetActive(true);
     }
 }
