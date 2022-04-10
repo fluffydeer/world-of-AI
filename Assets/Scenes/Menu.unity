@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31302702, g: 0.2936867, b: 0.5140873, a: 1}
+  m_IndirectSpecularColor: {r: 0.31308678, g: 0.2937598, b: 0.5141306, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 300066487}
   - component: {fileID: 300066486}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: FlyingLights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
