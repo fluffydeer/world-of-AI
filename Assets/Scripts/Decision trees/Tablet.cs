@@ -13,7 +13,7 @@ public class Tablet : MonoBehaviour
     [SerializeField] GameObject canvas2;
     [SerializeField] GameObject canvas3;
     private AudioSource tabletAudio;
-    public AudioClip correctAnswerSound;
+    public AudioClip correctAnswerSound;    //dat do managera
 
 
     private GameObject selectedAnswer;   //selected row on the tablet
@@ -93,6 +93,7 @@ public class Tablet : MonoBehaviour
         }
     }
 
+    //dat do manazera
     public IEnumerator SetActive(GameObject go, float time)
     {
         yield return new WaitForSeconds(time);

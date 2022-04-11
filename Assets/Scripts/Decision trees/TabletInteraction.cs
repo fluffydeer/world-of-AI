@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//toto potom nazvat TabletQuestion
 //script for handling user interaction with tablet 
 //specifically with the Text (TMP) the player will touch on
 public class TabletInteraction : MonoBehaviour{
@@ -40,6 +41,8 @@ public class TabletInteraction : MonoBehaviour{
         Tablet.Instance.SetSelectedAnswer(gameObject);      //here we send the whole object also with this script!
     }
 
+    //dat do manazera, lebo button je rovnaky - alebo dat do zvlast skriptu
+    //toto by bolo TabletButton
     private void PressButton(){
         //Debug.Log("OKBUTTON");
         GameObject pressedButton = gameObject.transform.Find("PressedButton").gameObject;
