@@ -50,6 +50,10 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/default/in/SwitchToMenu",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
@@ -81,10 +85,6 @@
       "name": "/actions/mixedreality/in/ExternalCamera",
       "type": "pose",
       "requirement": "optional"
-    },
-    {
-      "name": "/actions/MenuSet/in/SwitchToMenu",
-      "type": "boolean"
     }
   ],
   "action_sets": [
@@ -102,10 +102,6 @@
     },
     {
       "name": "/actions/mixedreality",
-      "usage": "single"
-    },
-    {
-      "name": "/actions/MenuSet",
       "usage": "single"
     }
   ],

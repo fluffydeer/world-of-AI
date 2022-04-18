@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31308678, g: 0.2937598, b: 0.5141306, a: 1}
+  m_IndirectSpecularColor: {r: 0.31302702, g: 0.2936867, b: 0.5140873, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7489,7 +7489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   switchToMenu:
-    actionPath: /actions/MenuSet/in/SwitchToMenu
+    actionPath: /actions/default/in/SwitchToMenu
     needsReinit: 0
   handType: 0
 --- !u!4 &680974140
@@ -7519,7 +7519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionSet:
-    actionSetPath: /actions/MenuSet
+    actionSetPath: /actions/default
   forSources: 0
   disableAllOtherActionSets: 0
   activateOnStart: 1

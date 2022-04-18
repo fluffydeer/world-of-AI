@@ -26,7 +26,7 @@ public class SignTextManager : MonoBehaviour
 
     //toto by som este mala prilinkovat v button -> v on trigger funkciach
     //schovat potom button ak uzje index posledny
-    public void ChangeText(int increment)
+    private void ChangeText(int increment)
     {
         //Debug.Log("current: " + index);
         texts[index].gameObject.SetActive(false);
