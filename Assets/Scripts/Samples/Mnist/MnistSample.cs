@@ -34,7 +34,7 @@ namespace BarracudaSample
         /// <param name="texture"></param>
         public void Execute(RenderTexture texture)
         {
-            UnityEngine.Debug.Log(texture);
+            //UnityEngine.Debug.Log(texture);
             if (!isProcessing)
             {
                 StartCoroutine(ExecuteAsync(texture));
@@ -46,7 +46,7 @@ namespace BarracudaSample
         {
             if (isProcessing)
             {
-                UnityEngine.Debug.LogWarning("now processing");
+                //UnityEngine.Debug.LogWarning("now processing");
                 yield break;
             }
 

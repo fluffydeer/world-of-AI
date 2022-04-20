@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1024319088}
-  m_IndirectSpecularColor: {r: 0.73421663, g: 0.6856396, b: 0.69368535, a: 1}
+  m_IndirectSpecularColor: {r: 0.73421764, g: 0.6856404, b: 0.69368577, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16021,8 +16021,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 270}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0537, y: 0.0197}
-  m_SizeDelta: {x: 0.05, y: 0.04}
+  m_AnchoredPosition: {x: 0.081, y: -0.0018}
+  m_SizeDelta: {x: 0.13, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &540306649
 MonoBehaviour:
@@ -16071,10 +16071,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.1
-  m_fontSizeBase: 1
+  m_fontSize: 0.2
+  m_fontSizeBase: 0.2
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 0.001
   m_fontSizeMax: 1
   m_fontStyle: 0
@@ -19159,7 +19159,7 @@ RectTransform:
   m_LocalScale: {x: 220, y: 14, z: 1}
   m_Children: []
   m_Father: {fileID: 1987246830}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19285,7 +19285,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vyber spr\xE1vnu odpove\u010F a klikni na OK"
+  m_text: "Stla\u010D spr\xE1vnu odpove\u010F a klikni na OK"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22247,16 +22247,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780806701}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0338374, y: 0.2426761, z: 1}
+  m_LocalScale: {x: 1.0338376, y: 0.4946416, z: 1}
   m_Children: []
   m_Father: {fileID: 1940367412}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.156}
+  m_AnchoredPosition: {x: 0, y: 0.19499993}
   m_SizeDelta: {x: 0.5, y: 0.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &780806703
@@ -29454,7 +29454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ca03aa5ab3af9f147aa60e7b8d131fe3, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ca03aa5ab3af9f147aa60e7b8d131fe3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -31239,7 +31239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Prieh\u013Eadn\xE9?"
+  m_text: "Priesvitn\xE9?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -32270,7 +32270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03a8d2899fa191447951e8c9059a90e6, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03a8d2899fa191447951e8c9059a90e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -36824,7 +36824,7 @@ RectTransform:
   m_LocalScale: {x: 220, y: 14, z: 1}
   m_Children: []
   m_Father: {fileID: 797674110}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -37260,7 +37260,7 @@ RectTransform:
   m_LocalScale: {x: 220, y: 14, z: 1}
   m_Children: []
   m_Father: {fileID: 1888570152}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -38286,7 +38286,7 @@ RectTransform:
   m_LocalScale: {x: 220, y: 14, z: 1}
   m_Children: []
   m_Father: {fileID: 1790027331}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -45200,7 +45200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a071c8f1f400d446bad2e2d5b18c84b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6919999
+      value: 1.774
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a071c8f1f400d446bad2e2d5b18c84b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -45244,7 +45244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a071c8f1f400d446bad2e2d5b18c84b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.4996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a071c8f1f400d446bad2e2d5b18c84b, type: 3}
       propertyPath: m_LocalScale.z
@@ -45260,7 +45260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7a071c8f1f400d446bad2e2d5b18c84b, type: 3}
       propertyPath: m_TagString
-      value: Paper
+      value: Compost
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7a071c8f1f400d446bad2e2d5b18c84b, type: 3}
       propertyPath: m_Layer
@@ -45435,8 +45435,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.9968157, y: 0.7186358, z: 5.9988637}
-  m_Center: {x: -0.0015932322, y: -0.14485596, z: 0.0005605221}
+  m_Size: {x: 5.9968157, y: 0.96, z: 5.9988637}
+  m_Center: {x: -0.0015932322, y: -0.02, z: 0.0005605221}
 --- !u!114 &1657974910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48089,8 +48089,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "<b>Po\u010Det rokov<pos=19%>Farba <pos=32%>Kompostovate\u013En\xE9 <pos=55%>\tRecyklovate\u013En\xE9\t<pos=85%>V\xFDsledok\t\n<pos=2%>rozkladu\t<pos=59%>do
-    nekone\u010Dna</b>\n<pos=4%>510<pos=19%>siv\xE1<pos=40%>nie<pos=67%>\xE1no<pos=87%>kov\n<pos=4%>940<pos=19%>prieh\u013Eadn\xE1<pos=40%>nie<pos=67%>nie<pos=87%>plast\n<pos=4%>3000<pos=19%>prieh\u013Eadn\xE1<pos=40%>nie<pos=67%>\xE1no<pos=87%>sklo\n<pos=4%> 
-    1<pos=19%>biela<pos=40%>\xE1no<pos=67%>nie<pos=87%>papier\n<pos=4%>0.5<pos=19%>oran\u017Eov\xE1<pos=40%>\xE1no<pos=67%>nie<pos=87%>kompost\n<pos=4%>100<pos=19%>prieh\u013Eadn\xE1<pos=40%>nie<pos=67%>nie<pos=87%>plast"
+    nekone\u010Dna</b>\n<pos=4%>510<pos=19%>siv\xE1<pos=40%>nie<pos=67%>\xE1no<pos=87%>kov\n<pos=4%>940<pos=19%>priesvitn\xE9<pos=40%>nie<pos=67%>nie<pos=87%>plast\n<pos=4%>3000<pos=19%>priesvitn\xE9<pos=40%>nie<pos=67%>\xE1no<pos=87%>sklo\n<pos=4%> 
+    1<pos=19%>biela<pos=40%>\xE1no<pos=67%>nie<pos=87%>papier\n<pos=4%>0.5<pos=19%>oran\u017Eov\xE1<pos=40%>\xE1no<pos=67%>nie<pos=87%>kompost\n<pos=4%>100<pos=19%>priesvitn\xE9<pos=40%>nie<pos=67%>nie<pos=87%>plast"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -55493,7 +55493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4281780448642680, guid: 0f9577b4dda6cc546abea4737be5a392, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.132
+      value: 2.283
       objectReference: {fileID: 0}
     - target: {fileID: 4281780448642680, guid: 0f9577b4dda6cc546abea4737be5a392, type: 3}
       propertyPath: m_LocalPosition.z
@@ -55525,7 +55525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4281780448642680, guid: 0f9577b4dda6cc546abea4737be5a392, type: 3}
       propertyPath: m_LocalScale.y
-      value: 6.59315
+      value: 3.2346654
       objectReference: {fileID: 0}
     - target: {fileID: 4281780448642680, guid: 0f9577b4dda6cc546abea4737be5a392, type: 3}
       propertyPath: m_LocalScale.z
@@ -56873,16 +56873,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985021031}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00010172525}
+  m_LocalScale: {x: 10.666667, y: 3.202562, z: 8}
   m_Children: []
   m_Father: {fileID: 1657974904}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.14}
+  m_AnchoredPosition: {x: 0, y: 0.657}
   m_SizeDelta: {x: 0.5, y: 0.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1985021033
