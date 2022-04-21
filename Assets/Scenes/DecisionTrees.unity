@@ -6232,11 +6232,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "1. Vyber ot\xE1zku, ktor\xE1 najlep\u0161ie rozde\u013Euje d\xE1ta, ktor\xE9
-    s\xFA v danom uzle. To bude t\xE1 ot\xE1zka, ktor\xE1 m\xE1 <b><color=\"black\">najvy\u0161\u0161\xED
-    informa\u010Dn\xFD zisk<color=\"white\"></b>. \r\n\n2. Rozde\u013E d\xE1ta pod\u013Ea
-    ot\xE1zky.\r\n-ak u\u017E d\xE1ta nevieme viac rozdeli\u0165 alebo s\xFA v\u0161etky
-    d\xE1ta rozdelen\xE9 do listov, tak koniec.\r\n-inak sa vr\xE1\u0165 na krok
-    1. \r\n"
+    s\xFA v danom uzle. To bude t\xE1 ot\xE1zka, ktor\xE1 m\xE1 <b><color=\"black\">najni\u017E\u0161\xED
+    gini index<color=\"white\"></b>. \r\n\n2. Rozde\u013E d\xE1ta pod\u013Ea ot\xE1zky.\r\n-ak
+    u\u017E d\xE1ta nevieme viac rozdeli\u0165 alebo s\xFA v\u0161etky d\xE1ta rozdelen\xE9
+    do listov, tak koniec.\r\n-inak sa vr\xE1\u0165 na krok 1. \r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9065,7 +9064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &301932664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10615,7 +10614,7 @@ MonoBehaviour:
   canvas1: {fileID: 1171049745}
   canvas2: {fileID: 425264711}
   canvas3: {fileID: 1826711261}
-  correctAnswerSound: {fileID: 0}
+  correctAnswerSound: {fileID: 8300000, guid: 8646a49463325d84ebb54d8819e818ea, type: 3}
 --- !u!82 &346396048
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12241,7 +12240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &414395095
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12281,7 +12280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Najvy\u0161\u0161\xED informa\u010Dn\xFD zisk je 0.417 a m\xE1 ho strom
+  m_text: "Najni\u017E\u0161\xED informa\u010Dn\xFD zisk je  58% a m\xE1 ho strom
     v strede s ot\xE1zkou: \n<b><color=#D3D3D3>Rozklad\xE1 sa odpad viac ako 100
     rokov?</b><color=\"white\"> T\xE1to ot\xE1zka bude kore\u0148om stromu. T\xFDmto
     sp\xF4sobom si ur\u010D\xEDme v\u0161etky ot\xE1zky v strome."
@@ -14965,7 +14964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &517091717
 Transform:
   m_ObjectHideFlags: 0
@@ -21012,7 +21011,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<color=\"yellow\">Ot\xE1zka <pos=55%>Informa\u010Dn\xFD zisk \n\n"
+  m_text: "<color=\"yellow\">Ot\xE1zka <pos=55%>Gini index\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22767,7 +22766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D\u013A\u017Eka aspo\u0148 13 cm?  <pos=65%>0.37\n\n"
+  m_text: "D\u013A\u017Eka aspo\u0148 13 cm?  <pos=65%>64%\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -31873,7 +31872,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Zelen\xE9? <pos=65%>0.14\n\n"
+  m_text: "Zelen\xE9? <pos=65%>46%\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -34094,12 +34093,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Najlep\u0161ia ot\xE1zka bude t\xE1, ktor\xE1 n\xE1m d\xE1 najvy\u0161\u0161\xED
-    <b><u><color=#D3D3D3>informa\u010Dn\xFD zisk</b></u><color=\"white\">. Informa\u010Dn\xFD
-    zisk je matematick\xFD opis <color=#D3D3D3><u><b>mno\u017Estva inform\xE1ci\xED</b></u><color=\"white\">,
-    ktor\xE9 n\xE1m dan\xE1 vlastnos\u0165 poskytuje. Ak m\xE1 ot\xE1zka vysok\xFD
-    informa\u010Dn\xFD zisk, tak n\xE1m poskytuje aj ve\u013Ea inform\xE1ci\xED a
-    najlep\u0161ie \u0148ou rozdel\xEDme d\xE1ta. "
+  m_text: "Najlep\u0161ia ot\xE1zka bude t\xE1, ktor\xE1 n\xE1m d\xE1 najni\u017E\u0161\xED
+    <b><u><color=#D3D3D3>gini index</b></u><color=\"white\">. Gini index vyjadruje 
+    matematick\xFD opis <color=#D3D3D3><u><b> nespr\xE1vneho zatriedenia \xFAdajov</b></u><color=\"white\">
+    na z\xE1klade inform\xE1ci\xED, ktor\xE9 m\xE1me v tabu\u013Eke. Ak m\xE1 ot\xE1zka
+    n\xEDzky gini index, tak je mal\xE1 \u0161anca, \u017Ee d\xE1ta dostan\xFA nespr\xE1vnu
+    triedu."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -39813,7 +39812,7 @@ RectTransform:
   m_LocalScale: {x: 220, y: 14, z: 1}
   m_Children: []
   m_Father: {fileID: 1556434304}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -39939,12 +39938,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ot\xE1zka v tre\u0165om kon\xE1ri m\xE1 informa\u010Dn\xFD zisk 0.113.
-    Na\u013Eavo m\xE1me <b><color=#D21404>kovy<color=\"white\">, <color=#74B72E>sklo<color=\"white\"></b> 
+  m_text: "Ot\xE1zka v tre\u0165om kon\xE1ri m\xE1 gini index 67%. Na\u013Eavo m\xE1me
+    <b><color=#D21404>kovy<color=\"white\">, <color=#74B72E>sklo<color=\"white\"></b> 
     a <b><color=#F4BC1C> plasty<color=\"white\"></b>.\nVpravo m\xE1me <b><color=#7AD7F0>papiere<color=\"white\"></b>,
     <b><color=#964B00>kompost<color=\"white\"></b> a <b><color=#F4BC1C>plasty<color=\"white\"></b>.\nNa
     \u013Eavom aj v pravom kon\xE1ri m\xE1me plasty. Ke\u010F\u017Ee s\xFA v oboch
-    kon\xE1roch, tak sp\xF4sobuj\xFA nejasnosti a informa\u010Dn\xFD zisk je ni\u017E\u0161\xED
+    kon\xE1roch, tak sp\xF4sobuj\xFA nejasnosti a gini index je vy\u0161\u0161\xED
     ako stromu v strede."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -41042,10 +41041,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ot\xE1zka v druhom strome m\xE1 informa\u010Dn\xFD zisk 0.417, ktor\xFD
-    n\xE1m rozdelil d\xE1ta do dvoch tried. Na \u013Eavo m\xE1me <b><color=#D21404>kovy,
-    <color=#F4BC1C> plasty<color=\"white\"></b> a <b><color=#74B72E>sklo<color=\"white\"></b>.
-    Vpravo m\xE1me  <b><color=#7AD7F0>papiere<color=\"white\"></b> a odpadky ur\u010Den\xE9
+  m_text: "Ot\xE1zka v druhom strome m\xE1 gini index 58%, ktor\xFD n\xE1m rozdelil
+    d\xE1ta do dvoch tried. Na \u013Eavo m\xE1me <b><color=#D21404>kovy, <color=#F4BC1C>
+    plasty<color=\"white\"></b> a <b><color=#74B72E>sklo<color=\"white\"></b>. Vpravo
+    m\xE1me  <b><color=#7AD7F0>papiere<color=\"white\"></b> a odpadky ur\u010Den\xE9
     na  <b><color=#964B00>kompost<color=\"white\"></b>. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -42250,7 +42249,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u010Cerven\xE9? <pos=65%>0.31\n\n\n"
+  m_text: "\u010Cerven\xE9? <pos=65%>33%\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -45757,8 +45756,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Rozklad \u2265 0.5 roka? \n\n<b><color=\"black\">Informa\u010Dn\xFD zisk
-    je 0 "
+  m_text: "Rozklad \u2265 0.5 roka? \n\n<b><color=\"black\">Gini index je 78%"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -48793,8 +48791,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Rozklad \u2265 500 rokov?\n\n<b><color=\"black\">Informa\u010Dn\xFD zisk
-    je 0.113 "
+  m_text: "Rozklad \u2265 500 rokov?\n\n<b><color=\"black\">Gini index je 67%"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -49966,7 +49963,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u010Cerven\xE9? <pos=65%>0.173\n\n"
+  m_text: "\u010Cerven\xE9? <pos=65%>50%\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -51036,8 +51033,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pozrime sa na nasleduj\xFAce tri stromy. \nPrv\xFD strom m\xE1 informa\u010Dn\xFD
-    zisk rovn\xFD 0<color=\"white\">. \nAko vid\xEDme, t\xE1to ot\xE1zka n\xE1m <b><u><color=#D3D3D3>v\xF4bec
+  m_text: "Pozrime sa na nasleduj\xFAce tri stromy. \nPrv\xFD strom m\xE1 gini index
+    rovn\xFD 78%<color=\"white\">. \nAko vid\xEDme, t\xE1to ot\xE1zka n\xE1m <b><u><color=#D3D3D3>v\xF4bec
     nerozdelila d\xE1ta </b></u><color=\"white\">a teda je zbyto\u010Dn\xE9 sa ju
     p\xFDta\u0165, lebo v\u0161etky \xFAdaje s\xFA st\xE1le v tej istej kateg\xF3ri\xED
     - v \u013Eavom kon\xE1ri. "
@@ -53236,7 +53233,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D\u013A\u017Eka aspo\u0148 5 cm? <pos=63.5%> 0\n\n"
+  m_text: "D\u013A\u017Eka aspo\u0148 5 cm? <pos=63.5%> 27%\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -53397,8 +53394,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Rozklad \u2265 100 rokov?\n\n<b><color=\"black\">Informa\u010Dn\xFD zisk
-    je 0.417 "
+  m_text: "Rozklad \u2265 100 rokov?\n\n<b><color=\"black\">Gini index je 58%"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -57178,7 +57174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u017Dlt\xE9? <pos=65%>0.37\n\n"
+  m_text: "\u017Dlt\xE9? <pos=65%>27%\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -60793,7 +60789,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Zelen\xE9? <pos=65%>0.31\n\n"
+  m_text: "Zelen\xE9? <pos=65%>33%"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
