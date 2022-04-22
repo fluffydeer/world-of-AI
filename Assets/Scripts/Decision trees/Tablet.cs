@@ -40,7 +40,7 @@ public class Tablet : MonoBehaviour
     public void CheckAnswers()
     {
         //here the variables of the selected answers should be stored
-        TabletInteraction tableInteractionScript = selectedAnswer.GetComponent<TabletInteraction>();
+        TabletInteraction tableInteractionScript = selectedAnswer.GetComponent<TabletInteraction>(); //tuto hadze not set instance
         bool isCorrect = tableInteractionScript.GetIsCorrect();
         if (isCorrect) {
             Debug.Log("correct");
