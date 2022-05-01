@@ -34,11 +34,13 @@ public class SignTextManager : MonoBehaviour
 
     public void OnButtownDown(GameObject button)
     {
+        Debug.Log("button is down");
         previousColorButton = button.GetComponent<Renderer>().material.color;
     }
 
     public void OnButtonIsPressed(GameObject button)
     {
+        Debug.Log("button is pressed");
         button.GetComponent<Renderer>().material.color = previousColorButton * 0.5f;
     }
 
@@ -49,6 +51,7 @@ public class SignTextManager : MonoBehaviour
 
     public void OnButtonUp(GameObject button)
     {
+        Debug.Log("button is UP");
         button.GetComponent<Renderer>().material.color = previousColorButton;
     }
 

@@ -17,7 +17,7 @@ public class ColorChanger : MonoBehaviour
     private void LoopGreenColorChange()
     {
         //changes green color over time
-        iTween.ColorTo(gameObject, iTween.Hash("g", originalColor.g + 0.5f, "time", time, "looptype", "pingPong"));
+        iTween.ColorTo(gameObject, iTween.Hash("g", originalColor.g + 0.5f, "time", time, "looptype", "pingPong", "includeChildren", false));
     }
     
     public void Destroy()
