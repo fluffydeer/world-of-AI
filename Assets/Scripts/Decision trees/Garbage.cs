@@ -6,6 +6,7 @@ public class Garbage : MonoBehaviour
 {
     [SerializeField] bool isInBin = false;
     [SerializeField] Vector3 initialPosition;
+    [SerializeField] GameObject staticObject;
 
     public void Start()
     {
@@ -26,5 +27,11 @@ public class Garbage : MonoBehaviour
     public Vector3 GetInitialPosition()
     {
         return initialPosition;
+    }
+
+    public void RemoveTrash()
+    {
+        staticObject.SetActive(true);
+        Destroy(gameObject);
     }
 }

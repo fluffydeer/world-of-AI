@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Valve.VR.InteractionSystem;
 
 
 public class SignTextManager : MonoBehaviour
@@ -14,7 +15,13 @@ public class SignTextManager : MonoBehaviour
     [SerializeField] TMP_Text[] texts;
     private int index = 0;  //Static? 
 
-    public void Start(){
+
+    static private Color previousColorButton;
+
+
+    public void Start() {
+
+
         //to hide BackButtons - buttons going to left if they are visible
         HandleButtonVisibility();
     }
@@ -22,6 +29,27 @@ public class SignTextManager : MonoBehaviour
     public void OnButtonDown(int direction)
     {
         ChangeText(direction);
+        //FlickColor(direction);
+    }
+
+    public void OnButtownDown(GameObject button)
+    {
+        previousColorButton = button.GetComponent<Renderer>().material.color;
+    }
+
+    public void OnButtonIsPressed(GameObject button)
+    {
+        button.GetComponent<Renderer>().material.color = previousColorButton * 0.5f;
+    }
+
+    public void HandDown(Hand hand)
+    {
+        hand.TriggerHapticPulse(500);
+    }
+
+    public void OnButtonUp(GameObject button)
+    {
+        button.GetComponent<Renderer>().material.color = previousColorButton;
     }
 
     //toto by som este mala prilinkovat v button -> v on trigger funkciach

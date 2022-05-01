@@ -39,19 +39,26 @@ public class BinManager : MonoBehaviour
         Debug.Log("other name: " + other.gameObject.name);
         Debug.Log("other tag: " + other.gameObject.tag);
         Debug.Log("bin: " + gameObject.tag);
+
+        //bolo by fajn tu spravit zamok - multuthreading lock
         if (other.gameObject.CompareTag(gameObject.tag)){
-            other.transform.parent = null;
-            StartCoroutine(RemoveThrowable(other.gameObject));
+            Debug.Log(other.name);
+            
+            //tento sposobn nefunguje
+            /*StartCoroutine(RemoveThrowable(other.gameObject));
+            other.transform.parent = null;*/
+
             Garbage garbageScript = other.GetComponent<Garbage>();
             if (!garbageScript.GetIsInBin())
             {
-                garbageScript.SetIsInBin(true);
+                garbageScript.RemoveTrash();
+                //garbageScript.SetIsInBin(true);
                 CorrectAnswer();
             }
         }
         else
         {
-            //Debug.Log("zle");
+            Debug.Log("zle");
             binAudio.PlayOneShot(incorrectAnswerSound, 1.0f);
             //find child called spawnpoint
             //assign this spawnpoint to "new position"
@@ -114,9 +121,10 @@ public class BinManager : MonoBehaviour
         sign2.SetActive(false);
     }
 
-    public IEnumerator RemoveThrowable(GameObject other)
+    //tento sposob nefunguje
+    /*public IEnumerator RemoveThrowable(GameObject other)
     {
         yield return new WaitForSeconds(1f);
         Destroy(other.GetComponent<Throwable>());   //aby s tym nemohol hybat
-    }
+    }*/
 }
