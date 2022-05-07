@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowNextBranch : MonoBehaviour
+public class VisibilityHandler : MonoBehaviour
 {
     [SerializeField] GameObject go;
+    [SerializeField] bool makeVisible;
+
     void Update()
     {
          if(gameObject.activeSelf == true){
-            go.SetActive(true);
+            go.SetActive(makeVisible);
             Destroy(this);      //Destroys script
          }
-        
     }
 }

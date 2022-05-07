@@ -40,7 +40,7 @@ public class SignTextManager : MonoBehaviour
 
     public void OnButtonIsPressed(GameObject button)
     {
-        Debug.Log("button is pressed");
+//        Debug.Log("button is pressed");
         button.GetComponent<Renderer>().material.color = previousColorButton * 0.5f;
     }
 
