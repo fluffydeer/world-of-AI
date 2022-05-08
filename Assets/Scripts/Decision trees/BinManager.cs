@@ -26,13 +26,10 @@ public class BinManager : MonoBehaviour
 
     public void Start()
     {
-        scorebarWidth = scorebar.transform.localScale.x; //0.7
-        //Debug.Log("scorebarwidth " + scorebarWidth);
-        initialSliderWidth = slider.transform.localScale.x;    //0.0875
-        //Debug.Log("initial slider width " + initialSliderWidth);
+        scorebarWidth = scorebar.transform.localScale.x; 
+        initialSliderWidth = slider.transform.localScale.x;   
         binAudio = GetComponent<AudioSource>();
     }
-
     
     //najprv by skom mala zistit ze preco to vobec vznika 
     public void OnTriggerEnter(Collider other) {

@@ -12,6 +12,9 @@ TagManager:
   - TabletData
   - OkButton
   - CD
+  - Question1
+  - Question2
+  - Question3
   layers:
   - Default
   - TransparentFX

@@ -39,7 +39,7 @@ public class Fading : MonoBehaviour
             Color c = renderer.material.color;
             c.a = f;
             renderer.material.color = c;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.09f);
         }
     }
 }

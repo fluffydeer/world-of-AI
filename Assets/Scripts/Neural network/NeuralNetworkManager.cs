@@ -39,7 +39,7 @@ public class NeuralNetworkManager : MonoBehaviour
 
     public void PlayCDPlayerClosingSound()
     {
-        audioSource.PlayOneShot(cdPlayerClosing);
+        audioSource.PlayOneShot(cdPlayerClosing, 1f);
     }
 
     public void SetUpDrawing()
@@ -54,6 +54,11 @@ public class NeuralNetworkManager : MonoBehaviour
         {
             go.SetActive(true);
         }
+    }
+
+    public void SetActiveFalse(GameObject go)
+    {
+        go.SetActive(false);
     }
 
     public void SetInteractableAndThrowableToChildren(GameObject parentGameObject)

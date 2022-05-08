@@ -81,7 +81,7 @@ public class Tablet : MonoBehaviour
             Debug.Log("incorrect");
             tabletAudio.PlayOneShot(DecisionTreesLevelManager.Instance.failureSound, 1.0f);
             hintText.gameObject.SetActive(true);
-            hintText.text = "Označ prvú otázku s najvyšším informačným ziskom!";
+            hintText.text = "Označ prvú otázku s najnižším gini indexom!";
             tableInteractionScript.SetHighlightColor(new Color32(255, 0, 0, 255));
             StartCoroutine(SetInactive(hintText.gameObject, 3f));
             //Destroy(selectedAnswer.GetComponent<TabletInteraction>());  //destroys script 

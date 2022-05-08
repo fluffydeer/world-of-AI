@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
-using UnityEngine.Events;
 
 public class SnapZone : MonoBehaviour
 {
@@ -10,29 +8,27 @@ public class SnapZone : MonoBehaviour
     [SerializeField] private GameObject outputText = null;
     [SerializeField] private GameObject teleportArea = null;
     [SerializeField] private GameObject CD_in_driver = null;
-    [SerializeField] private Renderer renderer = null;
+    [SerializeField] private Renderer interactableCD = null;
     [SerializeField] private ParticleSystem electricityParticleSystem;
 
-    private string closeCDDrive = "Close_CD_Drive";
+    private readonly string closeCDDrive = "Close_CD_Drive";
 
     public bool turnOn = false;
-    private bool turnedOnOnce = true;
-
-    void Start()
-    {
-    }
-
+    private bool CDDriverOpen = true;
     private void Update() {
         //v editore mozem nastavit turnOn
-        if(turnOn && turnedOnOnce){
-            turnedOnOnce = false;
-            boze();
+        if(turnOn && CDDriverOpen){
+            CDDriverOpen = false;
+            HandleCDInDriver();
         }
     }
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("CD")){
-            boze();     //toto by sa malo spustat z ineho skriptu
+            if (CDDriverOpen){
+                CDDriverOpen = false;
+                HandleCDInDriver();     //toto by sa malo spustat z ineho skriptu
+            }
         }
     }
     public IEnumerator ShowWithDelay(GameObject something)
@@ -41,7 +37,8 @@ public class SnapZone : MonoBehaviour
         something.SetActive(true);
     }
 
-    private void boze() {
+    private void HandleCDInDriver() {
+       //toto sa moze spustit len raz
         CD_in_driver.SetActive(true);
         NeuralNetworkManager.Instance.PlayCDPlayerClosingSound();
 
@@ -55,8 +52,11 @@ public class SnapZone : MonoBehaviour
          mentions that disabling a GameObject also stops all coroutines. 
         They do not continue when you re-enable the object.*/
         //Renderer renderer = GetComponent<MeshRenderer>();
+        
         Color c = new Color(0, 0, 0, 0);
-        renderer.material.color = c;
+        interactableCD.material.color = c;
+        Destroy(interactableCD.transform.parent.GetComponent<Throwable>());
+        interactableCD.gameObject.SetActive(false);
 
         //animate the cd player
         Debug.Log("animating");

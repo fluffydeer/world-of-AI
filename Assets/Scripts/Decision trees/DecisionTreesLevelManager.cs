@@ -7,6 +7,8 @@ public class DecisionTreesLevelManager : MonoBehaviour
     public static DecisionTreesLevelManager Instance;
     public AudioClip successSound;
     public AudioClip failureSound;
+    private AudioSource audioSource;
+
 
     public void Awake()
     {
@@ -16,8 +18,7 @@ public class DecisionTreesLevelManager : MonoBehaviour
             return;
         }
         Instance = this;
-        //DontDestroyOnLoad(gameObject);  //doesnt destroy GO when scene changes
-        //todo: but maybe i want the scene to change? 
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Hide(GameObject hideMe)
@@ -30,4 +31,13 @@ public class DecisionTreesLevelManager : MonoBehaviour
         showMe.SetActive(true);
     }
 
+    public void PlayCorrectAnswerSound()
+    {
+        audioSource.PlayOneShot(successSound);
+    }
+
+    public void PlayIncorrectAnswerSound()
+    {
+        audioSource.PlayOneShot(failureSound);
+    }
 }
