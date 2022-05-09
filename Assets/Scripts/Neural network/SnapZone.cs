@@ -55,7 +55,7 @@ public class SnapZone : MonoBehaviour
         
         Color c = new Color(0, 0, 0, 0);
         interactableCD.material.color = c;
-        Destroy(interactableCD.transform.parent.GetComponent<Throwable>());
+        //Destroy(interactableCD.transform.parent.GetComponent<Throwable>());
         // interactableCD.gameObject.SetActive(false);
 
         //animate the cd player
