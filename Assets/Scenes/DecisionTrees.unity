@@ -22618,7 +22618,7 @@ RectTransform:
   m_LocalScale: {x: 220, y: 14, z: 1}
   m_Children: []
   m_Father: {fileID: 1987246830}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -44046,7 +44046,7 @@ RectTransform:
   m_LocalScale: {x: 220, y: 14, z: 1}
   m_Children: []
   m_Father: {fileID: 797674110}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -44739,7 +44739,7 @@ RectTransform:
   m_LocalScale: {x: 220, y: 14, z: 1}
   m_Children: []
   m_Father: {fileID: 1888570152}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -46320,7 +46320,7 @@ RectTransform:
   m_LocalScale: {x: 220, y: 14, z: 1}
   m_Children: []
   m_Father: {fileID: 1790027331}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -57780,6 +57780,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 23357046182606914, guid: 84cd279dfc9ea0a4b8564030182915fa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 557d320396071df468d9ffae307a435d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84cd279dfc9ea0a4b8564030182915fa, type: 3}
 --- !u!4 &1717843955 stripped
