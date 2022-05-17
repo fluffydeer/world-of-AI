@@ -38,25 +38,10 @@ public class SnapZone : MonoBehaviour
     }
 
     private void HandleCDInDriver() {
-       //toto sa moze spustit len raz
         CD_in_driver.SetActive(true);
         NeuralNetworkManager.Instance.PlayCDPlayerClosingSound();
-
-        //asi toto zabija tu korutinu
-        //gameObject.SetActive(false);  
-        /*It's not true, though. I've tried this and for me the coroutines 
-        are stopped as soon as I call SetActive(false) on the MonoBehaviour.
-         EDIT: As @Bunny83 has pointed out, SetActive() disables the 
-         GameObject, which is not the same as disabling the MonoBehaviour. 
-         I still find it very misleading that the documentation never 
-         mentions that disabling a GameObject also stops all coroutines. 
-        They do not continue when you re-enable the object.*/
-        //Renderer renderer = GetComponent<MeshRenderer>();
-        
         Color c = new Color(0, 0, 0, 0);
         interactableCD.material.color = c;
-        //Destroy(interactableCD.transform.parent.GetComponent<Throwable>());
-        // interactableCD.gameObject.SetActive(false);
 
         //animate the cd player
         Debug.Log("animating");

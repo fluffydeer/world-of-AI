@@ -6,7 +6,6 @@ public class DoorTrigger : MonoBehaviour
 {
     [SerializeField] private Door door;
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("in trigger");
         door.OpenDoor();
     }
 
@@ -16,7 +15,6 @@ public class DoorTrigger : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("in collider");
         door.OpenDoor();
     }
 }

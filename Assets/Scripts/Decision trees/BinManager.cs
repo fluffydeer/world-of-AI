@@ -31,44 +31,26 @@ public class BinManager : MonoBehaviour
         binAudio = GetComponent<AudioSource>();
     }
     
-    //najprv by skom mala zistit ze preco to vobec vznika 
     public void OnTriggerEnter(Collider other) {
-        Debug.Log("other name: " + other.gameObject.name);
-        Debug.Log("other tag: " + other.gameObject.tag);
-        Debug.Log("bin: " + gameObject.tag);
-
-        //bolo by fajn tu spravit zamok - multuthreading lock
         if (other.gameObject.CompareTag(gameObject.tag)){
-            Debug.Log(other.name);
-            
-            //tento sposobn nefunguje
-            /*StartCoroutine(RemoveThrowable(other.gameObject));
-            other.transform.parent = null;*/
-
             Garbage garbageScript = other.GetComponent<Garbage>();
             if (!garbageScript.GetIsInBin())
             {
                 garbageScript.RemoveTrash();
-                //garbageScript.SetIsInBin(true);
                 CorrectAnswer();
             }
         }
         else
         {
-            Debug.Log("zle");
-            binAudio.PlayOneShot(incorrectAnswerSound, 1.0f);
-            //find child called spawnpoint
-            //assign this spawnpoint to "new position"
-            //Transform spawnPoint = other.transform.Find("SpawnPoint");
-            //Debug.Log(spawnPoint);
-            //checknut local position
-            //Debug.Log("spawn point" + spawnPoint.position);
-            //other.transform.position = spawnPoint.position;
-            Garbage garbageScript = other.GetComponent<Garbage>();
-
-            other.transform.position = garbageScript.GetInitialPosition();
-            //Debug.Log("garbage" + other.transform.position);
+            WrongAnswer(other);
         }
+    }
+
+    //toto som zmenila
+    private void WrongAnswer(Collider other){
+        binAudio.PlayOneShot(incorrectAnswerSound, 1.0f);
+        Garbage garbageScript = other.GetComponent<Garbage>();
+        other.transform.position = garbageScript.GetInitialPosition();
     }
 
     private void CorrectAnswer(){
@@ -88,19 +70,15 @@ public class BinManager : MonoBehaviour
 
     private void SetSliderWidth(){
         float x = correctAnswers * initialSliderWidth;
-        //Debug.Log("correct answers " + x);
         Vector3 scale = slider.transform.localScale;
         slider.transform.localScale = new Vector3(x, scale.y, scale.z);
-        //Debug.Log("slider localScale" + slider.transform.localScale.ToString("F4"));
         SetSliderPosition();
     }
 
     private void SetSliderPosition(){
         float x = scorebarWidth/2 -  (initialSliderWidth * correctAnswers)/2;
         Vector3 position = slider.transform.localPosition;
-        //Debug.Log("previous slider position" + slider.transform.localPosition.ToString("F4"));
         slider.transform.localPosition = new Vector3(x, position.y, position.z);
-        //Debug.Log("slider position" + slider.transform.localPosition.ToString("F4"));
     }
 
     private void IsDone(){
@@ -117,11 +95,4 @@ public class BinManager : MonoBehaviour
         sign.SetActive(false);
         sign2.SetActive(false);
     }
-
-    //tento sposob nefunguje
-    /*public IEnumerator RemoveThrowable(GameObject other)
-    {
-        yield return new WaitForSeconds(1f);
-        Destroy(other.GetComponent<Throwable>());   //aby s tym nemohol hybat
-    }*/
 }

@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-//toto potom nazvat TabletQuestion
 //script for handling user interaction with tablet 
 //specifically with the Text (TMP) the player will touch on
 public class TabletInteraction : MonoBehaviour{
     [SerializeField] GameObject highlight;
-    //[SerializeField] bool isSelected;
     [SerializeField] bool isCorrect;
 
     private void OnTriggerEnter(Collider other){
-        //tu by bolo fajn kontrolovatze ci zaciatok sova je finger a az potom t oznacit
-        //Debug.Log(this.name + " was entered");
-        //ze ci na lavu ruku netreba pridat finger_middle_2_l?s
         if (gameObject.CompareTag("OkButton") && other.name.Equals("finger_middle_2_r")){
             PressButton();
         }
@@ -25,7 +20,6 @@ public class TabletInteraction : MonoBehaviour{
     }
 
     private void HighlightRow(){
-        //Debug.Log("TABLETDATA");
         //this resets all the highlights and highlights the one user just touched
         Transform parent = this.transform.parent;
         foreach (Transform child1 in parent){
@@ -40,11 +34,7 @@ public class TabletInteraction : MonoBehaviour{
         highlight.SetActive(true);
         Tablet.Instance.SetSelectedAnswer(gameObject);      //here we send the whole object also with this script!
     }
-
-    //dat do manazera, lebo button je rovnaky - alebo dat do zvlast skriptu
-    //toto by bolo TabletButton
     private void PressButton(){
-        //Debug.Log("OKBUTTON");
         GameObject pressedButton = gameObject.transform.Find("PressedButton").gameObject;
         GameObject unpressedButton = gameObject.transform.Find("UnpressedButton").gameObject;
 

@@ -18,7 +18,7 @@ public class RadialProgressBar : MonoBehaviour
     {
         if(output == this.output)
         {
-            Debug.Log("Value: " + output + " probability: " + probability);
+            //Debug.Log("Value: " + output + " probability: " + probability);
             circle.fillAmount = probability;
         }
     }

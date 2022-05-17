@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using BarracudaSample;
 
 public class Drawing : MonoBehaviour
 {
     public static Drawing Instance;
     [SerializeField] RenderTexture texture = null;
-    [SerializeField] MnistSample mnistSample = null;
+    [SerializeField] MnistWrapper mnistSample = null;
     private List<GameObject> highlightedQuads = new List<GameObject>();
 
     public void Awake()
@@ -20,10 +17,9 @@ public class Drawing : MonoBehaviour
             return;
         }
         Instance = this;
-        //DontDestroOnLoad -> asi ked budeme mat restart v scene tak to bude treba implementovat
     }
 
-    //texturu bude stacit dzrat len tu
+    //texturu bude stacit drzat len tu
     public void ExecuteMnist()
     {
         mnistSample.Execute(texture);

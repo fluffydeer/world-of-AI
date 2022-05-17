@@ -9,7 +9,6 @@ public class Door : MonoBehaviour
     [SerializeField] private bool closeDoor = false;
     void Update()
     {
-        //comment ot
         if(openDoor){
             openDoor = false;
             OpenDoor();
